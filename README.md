@@ -4,7 +4,7 @@ This is the frontend of the **Face Recognition Brain** application. It allows us
 
 ## Demo
 
-You can test the web application by visiting [live demo link](#).
+You can test the web application by visiting [https://smart-brain-frontend-29200474981c.herokuapp.com/](#).
 
 ## Tech Stack
 
