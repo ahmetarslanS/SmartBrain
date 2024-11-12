@@ -7,12 +7,18 @@ This is the frontend of the **Face Recognition Brain** application. It allows us
 You can view the live demo [here](https://smart-brain-frontend-29200474981c.herokuapp.com/).
 
 ## Tech Stack
-
+### Frontend
 - **React.js**: JavaScript library for building user interfaces.
 - **React-Redux**: State management library to manage the application's state.
 - **CSS**: For styling the user interface.
-- **Clarifai API**: For face detection functionality via the backend.
-- **PostgreSQL**: Database for storing user data (interacts with the backend).
+### Backend
+- **Node.js**: JavaScript runtime environment used for server-side scripting.
+- **Express**: Web framework for building the API.
+- **PostgreSQL**: Relational database used for storing user data and image entries.
+- **Clarifai API**: For face detection functionality.
+- **Knex.js**: SQL query builder for interacting with the PostgreSQL database.
+- **bcrypt-nodejs**: Library for password hashing.
+- **CORS**: Middleware for enabling cross-origin requests.
 
 ## Features
 
@@ -50,16 +56,16 @@ The frontend will be available at http://localhost:3000.
 
 The frontend communicates with the backend using the following API endpoints:
 
-POST /signin: To sign in a user.
-POST /register: To register a new user.
-GET /profile/:id: To fetch the user profile.
-POST /imageurl: To send image URLs to the backend for face detection.
+- POST /signin: To sign in a user.
+- POST /register: To register a new user.
+- GET /profile/:id: To fetch the user profile.
+- POST /imageurl: To send image URLs to the backend for face detection.
 
 ## Deployment
 
 To deploy this frontend:
 
-1. Set up the backend as described in the backend README.
+1. Set up the backend as described in the [Backend README](https://github.com/ahmetarslanS/FaceRecognitionBrain-API).
 
 2. Build the production-ready frontend:
 
