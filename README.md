@@ -56,10 +56,10 @@ The frontend will be available at http://localhost:3000.
 
 The frontend communicates with the backend using the following API endpoints:
 
-- POST /signin: To sign in a user.
-- POST /register: To register a new user.
-- GET /profile/:id: To fetch the user profile.
-- POST /imageurl: To send image URLs to the backend for face detection.
+- `POST /signin:` To sign in a user.
+- `POST /register:` To register a new user.
+- `GET /profile/:id:` To fetch the user profile.
+- `POST /imageurl:` To send image URLs to the backend for face detection.
 
 ## Deployment
 
