@@ -1,6 +1,6 @@
 # Smart Brain - Frontend
 
-This is the frontend of the **Smart Brain** application. It allows users to register, sign in, view their profiles, and upload images for face detection. The project is designed to recognize faces in images using a Clarifai API, with user authentication and entry tracking. Built with **React.js**, **React-Redux**, and **CSS** for a responsive and interactive user interface. The frontend communicates with the backend API for face detection and user management.
+This is the frontend of the **Smart Brain** application. It allows users to register, sign in, view their profiles, and upload images for face detection. The project is designed to recognize faces in images using a Clarifai API, with user authentication and entry tracking. Built with **React.js**, and **CSS** for a responsive and interactive user interface. The frontend communicates with the backend API for face detection and user management.
 
 ## Demo
 
