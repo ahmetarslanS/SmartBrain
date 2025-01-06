@@ -6,9 +6,8 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Rank from './components/Rank/Rank';
-import ParticlesBg from 'particles-bg'
+import ParticlesBg from 'particles-bg';
 import './App.css';
-
 
 const initialState = {
   input: '',
@@ -25,20 +24,20 @@ const initialState = {
   }
 }
 
-class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = initialState;
   }
 
   loadUser = (data) => {
-    this.setState({user: {
+    this.setState({ user: {
       id: data.id,
       name: data.name,
       email: data.email,
       entries: data.entries,
       joined: data.joined
-    }})
+    }});
   }
 
   calculateFaceLocation = (data) => {
@@ -55,57 +54,60 @@ class App extends Component {
   }
 
   displayFaceBox = (box) => {
-    this.setState({box: box});
+    this.setState({ box: box });
   }
 
   onInputChange = (event) => {
-    this.setState({input: event.target.value});
+    this.setState({ input: event.target.value });
   }
 
   onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input});
-      fetch('https://serene-brushlands-66381-55f70015ee1e.herokuapp.com/imageurl', {
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          input: this.state.input
-        })
+    this.setState({ imageUrl: this.state.input });
+    fetch('https://serene-brushlands-66381-55f70015ee1e.herokuapp.com/imageurl', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        input: this.state.input
       })
-      .then(response => response.json())
-      .then(response => {
-        if (response) {
-          fetch('https://serene-brushlands-66381-55f70015ee1e.herokuapp.com/image', {
-            method: 'put',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              id: this.state.user.id
-            })
+    })
+    .then(response => response.json())
+    .then(response => {
+      if (response) {
+        fetch('https://serene-brushlands-66381-55f70015ee1e.herokuapp.com/image', {
+          method: 'put',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            id: this.state.user.id
           })
-            .then(response => response.json())
-            .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count}))
-            })
-            .catch(console.log)
-
-        }
-        this.displayFaceBox(this.calculateFaceLocation(response))
-      })
-      .catch(err => console.log(err));
+        })
+        .then(response => response.json())
+        .then(count => {
+          this.setState(Object.assign(this.state.user, { entries: count }));
+        })
+        .catch(console.log);
+      }
+      this.displayFaceBox(this.calculateFaceLocation(response));
+    })
+    .catch(err => console.log(err));
   }
 
   onRouteChange = (route) => {
     if (route === 'signout') {
       this.setState(initialState);
     } else if (route === 'home') {
-      this.setState({isSignedIn: true});
+      this.setState({ isSignedIn: true });
     }
-    this.setState({route: route});
+    this.setState({ route: route });
   }
 
   render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <div className="App">
+        {/* Header with message */}
+        <div style={{ backgroundColor: 'red', color: 'white', padding: '10px', textAlign: 'center', fontWeight: 'bold' }}>
+          This website is no longer available because the backend server on Heroku has been canceled.
+        </div>
         <ParticlesBg type="square" num={25} bg={true} />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home'
@@ -127,16 +129,6 @@ class App extends Component {
       </div>
     );
   }
-} 
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
-      
-//     </div>
-//   );
-// }
+}
 
 export default App;
