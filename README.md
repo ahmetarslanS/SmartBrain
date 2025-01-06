@@ -4,7 +4,7 @@ This is the frontend of the **Smart Brain** application. It allows users to regi
 
 ## Demo
 
-You can view the live demo [here](https://smart-brain-frontend-29200474981c.herokuapp.com/).
+You can view the live demo [here](https://smart-brain-frontend-29200474981c.herokuapp.com/). (Deprecated due to Heroku server costs.)
 
 ## Tech Stack
 ### Frontend
